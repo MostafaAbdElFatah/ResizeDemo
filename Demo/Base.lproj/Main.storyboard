@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,12 +37,40 @@
                                     <outletCollection property="gestureRecognizers" destination="CCB-QD-s0T" appends="YES" id="zz0-Pb-H8h"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyO-Kt-Oqb">
+                                <rect key="frame" x="0.0" y="686" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="QEB-4q-g5u"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mKR-OM-4fQ" appends="YES" id="gwK-sJ-r0z"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-hu-D1L">
+                                <rect key="frame" x="18" y="648" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.72941176470000002" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Vcy-Ts-Woc"/>
+                                    <constraint firstAttribute="height" constant="30" id="wov-Ku-7JJ"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fyO-Kt-Oqb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PPP-ZE-nAd"/>
+                            <constraint firstItem="fyO-Kt-Oqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vqj-Ow-DBG"/>
+                            <constraint firstItem="fyO-Kt-Oqb" firstAttribute="top" secondItem="aiU-hu-D1L" secondAttribute="bottom" constant="8" id="ai5-oY-RQy"/>
+                            <constraint firstItem="fyO-Kt-Oqb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="150" id="fr3-Y3-Usx"/>
+                            <constraint firstItem="aiU-hu-D1L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="h5X-lp-lr2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="blueView" destination="ivh-0B-alV" id="AOk-S6-Vbs"/>
+                        <outlet property="greenView" destination="fyO-Kt-Oqb" id="wa1-LA-fAu"/>
+                        <outlet property="greenViewConstraint" destination="fr3-Y3-Usx" id="ZTG-bu-cJX"/>
                         <outlet property="redButton" destination="nl7-eQ-FFf" id="aVH-cb-Vzz"/>
                     </connections>
                 </viewController>
@@ -56,8 +85,13 @@
                         <action selector="redBtnPaned:" destination="BYZ-38-t0r" id="DzG-Wu-7Pp"/>
                     </connections>
                 </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="mKR-OM-4fQ">
+                    <connections>
+                        <action selector="greenViewPanned:" destination="BYZ-38-t0r" id="4Ss-Kc-yLI"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="132" y="100"/>
+            <point key="canvasLocation" x="131.8840579710145" y="99.456521739130437"/>
         </scene>
     </scenes>
 </document>
